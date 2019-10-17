@@ -1,0 +1,73 @@
+html{
+    background: url("../images/background-img.png");
+}
+
+.container{
+    margin: 50px auto;
+    width: 75%;
+    min-width: fit-content;
+    background-color: rgba(9, 173, 238, .75);
+    color: aliceblue;
+    text-align: center;
+    min-height: 80vh;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+h2{
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+#startBtn{
+    padding: 15px 25px;
+    background-color: rgba(82, 2, 148, .75);
+    min-width: fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.rulesText{
+    padding: 5px 0px;
+    font-size: 1.25rem;
+}
+
+#gameRules{
+    padding: 12.5px 25px;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+.answer{
+    padding: 12px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+#timeRemaining{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 25px;
+}
+
+#question{
+    font-size: 1.5rem;
+}
+
+#modal{
+    padding: 15px;
+    font-size: 1.25rem;
+    color: rgb(228, 68, 95);
+    background-color: black;
+    display: none;
+}

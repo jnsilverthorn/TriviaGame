@@ -1,0 +1,27 @@
+startBtn.one("click", function(){
+    question.text(questionIndex[index].question);
+    rulesText.text(clear);
+    startBtn.text("Good Luck!");
+    quesTimer();
+    answer1.text(questionIndex[index].answerChoices.a);
+    answer2.text(questionIndex[index].answerChoices.b);
+    answer3.text(questionIndex[index].answerChoices.c);
+    answer4.text(questionIndex[index].answerChoices.d);
+
+    if(answer1.on("click", function(){
+        qResponse.text(responseRight);
+        btwQuesTimer();
+    }))
+    if(answer2.on("click", function(){
+        qResponse.text(responseWrong);
+        btwQuesTimer();
+    }))
+    if(answer3.on("click", function(){
+        qResponse.text(responseWrong);
+        btwQuesTimer();
+    }))
+    if(answer4.on("click", function(){
+        qResponse.text(responseWrong);
+        btwQuesTimer();
+    }));
+});
