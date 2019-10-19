@@ -25,3 +25,740 @@ startBtn.one("click", function(){
         btwQuesTimer();
     }));
 });
+
+
+
+
+function answerPush(){
+    var pushA = answer1.one("click", function(){});
+    var pushB = answer2.one("click", function(){});
+    var pushC = answer3.one("click", function(){});
+    var pushD = answer4.one("click", function(){});
+
+    if(pushA){
+        choicesA.push("a");
+        console.log(choicesA);
+    }
+    else if(pushB){
+        choicesA.push("b");
+        console.log(choicesA);
+    }
+    else if(pushC){
+        choicesA.push("c");
+        console.log(choicesA);
+    }
+    else if(pushD){
+        choicesA.push("d");
+        console.log(choicesA);
+    };
+};
+
+
+    if(questionTimer === 0){
+        nextQuestionTime();
+    }
+    if(timeBtwQuestions === 0){
+        index++;
+        qNumber++;
+        clearInterval(intervalID2);
+        timer2.text(clear);
+        timeBtwQuestions = 6;
+        displayQuestion();
+        resetTimeRem();
+    };
+
+        if(timeBtwQuestions === 0){
+        index++;
+        qNumber++;
+        clearInterval(intervalID2);
+        timer2.text(clear);
+        timeBtwQuestions = 6;
+        displayQuestion();
+        resetTimeRem();
+    };
+
+//Timer for answering questions
+function count1(){
+    questionTimer--;
+    timer1.text("Time Remaining: " + questionTimer + " second(s)");
+};
+//Timer btw Questions
+function count2(){
+    timeBtwQuestions--;
+    timer2.text("Get Ready For the Next Question in: " + timeBtwQuestions + " second(s)");
+};
+//Resets and starts countdown for the question timer
+function resetTimeRem(){
+    questionTimer = 16;
+    count1();
+    quesTimer();
+};
+//interval for the question timer
+function quesTimer(){
+    intervalID = setInterval(count1, 1000);
+};
+//interval for the timer in btw questions
+function btwQuesTimer(){
+    intervalID2 = setInterval(count2, 1000);
+};
+//stops the first timer and starts the second timer(btwn questions)
+function nextQuestionTime(){
+    count2();
+    btwQuesTimer();
+    clearInterval(intervalID);
+};
+//No functionality
+function nothing(){
+    answers.one("click", function(){
+    });
+};
+//clears rules text, start button reads GL!, begin the first timer, display question
+function begin(){
+    rulesText.text(clear);
+    startBtn.text("Good Luck!");
+    count1();
+    quesTimer();
+    displayQuestion();
+};
+//clicking start button runs begin()
+startBtn.one("click", begin);
+//clicking an answer stops the first timer and brings up the first timer
+function userClick(){
+    answers.one("click", nextQuestionTime);
+};
+
+
+
+
+
+function question2(){
+    if (qNumber === 2){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#ff4d4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#4dff4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#ff4d4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#4dff4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#ff4d4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#4dff4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#ff4d4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#4dff4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+function question1(){
+    if (qNumber === 1){
+        answer1.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2interval();
+            timer2function();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer2.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer3.one("click", function(){
+            rightAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+        answer4.one("click", function(){
+            wrongAnswer();
+            clearInterval1();
+            timer2function();
+            timer2interval();
+            answer1.css("background-color", "#ff4d4d");
+            answer1.css("margin", "10px");
+            answer2.css("background-color", "#ff4d4d");
+            answer2.css("margin", "10px");
+            answer3.css("background-color", "#4dff4d");
+            answer3.css("margin", "10px");
+            answer4.css("background-color", "#ff4d4d");
+            answer4.css("margin", "10px 10px 20px 10px"); 
+        });
+    };
+};
+
+
+
+function question2(){
+    if (qNumber === 2){
+        answer1.one("click", wrong2);
+        answer2.one("click", wrong2);
+        answer3.one("click", wrong2);
+        answer4.one("click", right2);
+    };
+};
+
+function question3(){
+    if (qNumber === 3){
+        answer1.one("click", wrong3);
+        answer2.one("click", wrong3);
+        answer3.one("click", wrong3);
+        answer4.one("click", right3);
+    };
+};
+
+function question4(){
+    if (qNumber === 4){
+        answer1.one("click", wrong4);
+        answer2.one("click", wrong4);
+        answer3.one("click", wrong4);
+        answer4.one("click", right4);
+    };
+};
+
+function question5(){
+    if (qNumber === 5){
+        answer1.one("click", wrong5);
+        answer2.one("click", wrong5);
+        answer3.one("click", wrong5);
+        answer4.one("click", right5);
+    };
+};
+
+function question6(){
+    if (qNumber === 6){
+        answer1.one("click", wrong6);
+        answer2.one("click", wrong6);
+        answer3.one("click", wrong6);
+        answer4.one("click", right6);
+    };
+};
+
+function question7(){
+    if (qNumber === 7){
+        answer1.one("click", wrong7);
+        answer2.one("click", wrong7);
+        answer3.one("click", wrong7);
+        answer4.one("click", right7);
+    };
+};
+
+function question8(){
+    if (qNumber === 8){
+        answer1.one("click", wrong8);
+        answer2.one("click", wrong8);
+        answer3.one("click", wrong8);
+        answer4.one("click", right8);
+    };
+};
+
+function question9(){
+    if (qNumber === 9){
+        answer1.one("click", wrong9);
+        answer2.one("click", wrong9);
+        answer3.one("click", wrong9);
+        answer4.one("click", right9);
+    };
+};
+
+function question10(){
+    if (qNumber === 10){
+        answer1.one("click", wrong10);
+        answer2.one("click", wrong10);
+        answer3.one("click", wrong10);
+        answer4.one("click", right10);
+    };
+};
