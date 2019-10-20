@@ -23,50 +23,51 @@ var qResponse = $("#questionResponse");
 var intervalID;
 var intervalID2;
 var results = $("#results");
-//-----------------------------------------------
+
+var isAnswered = false;
+
 $(document).on("click", "#superReset", function(){
-    console.log("hi");
     location.reload();
 });
-//-----------------------------------------------
+
 var questionIndex = [{
-    question: "q1",
+    question: "What is 2 + 2?",
     answerChoices: {
-        a: "a. ans1",
-        b: "b. ans2",
-        c: "c. ans3",
-        d: "d. ans4"
+        a: "a. 3",
+        b: "b. 5",
+        c: "c. 4",
+        d: "d. 6"
     },
     correctAnswer: "c",
 },{
-    question: "q2",
+    question: "What is 4 + 4?",
     answerChoices: {
-        a: "a. ans5",
-        b: "b. ans6",
-        c: "c. ans7",
-        d: "d. ans8"
+        a: "a. 6",
+        b: "b. 9",
+        c: "c. 7",
+        d: "d. 8"
     },
     correctAnswer: "d",
 },{
-    question: "q3",
+    question: "What is 6 + 6?",
     answerChoices: {
-        a: "a. ans9",
-        b: "b. ans10",
-        c: "c. ans11",
-        d: "d. ans12"
+        a: "a. 10",
+        b: "b. 13",
+        c: "c. 12",
+        d: "d. 11"
     },
     correctAnswer: "c",
 },{
-    question: "q4",
+    question: "What is 8 + 8?",
     answerChoices: {
-        a: "a. ans13",
-        b: "b. ans14",
-        c: "c. ans15",
-        d: "d. ans16"
+        a: "a. 16",
+        b: "b. 14",
+        c: "c. 18",
+        d: "d. 17"
     },
     correctAnswer: "a",
 },{
-    question: "q5",
+    question: "What is 10 + 10?",
     answerChoices: {
         a: "a. ans17",
         b: "b. ans18",
@@ -75,48 +76,48 @@ var questionIndex = [{
     },
     correctAnswer: "b",
 },{
-    question: "q6",
+    question: "What is 12 + 12?",
     answerChoices: {
-        a: "a. ans21",
-        b: "b. ans22",
-        c: "c. ans23",
-        d: "d. ans24"
+        a: "a. 23",
+        b: "b. 22",
+        c: "c. 20",
+        d: "d. 24"
     },
     correctAnswer: "d",
 },{
-    question: "q7",
+    question: "What is 14 + 14?",
     answerChoices: {
-        a: "a. ans25",
-        b: "b. ans26",
-        c: "c. ans27",
-        d: "d. ans28"
+        a: "a. 29",
+        b: "b. 30",
+        c: "c. 28",
+        d: "d. 27"
     },
     correctAnswer: "c",
 },{
-    question: "q8",
+    question: "What is 16 + 16?",
     answerChoices: {
-        a: "a. ans29",
-        b: "b. ans30",
-        c: "c. ans31",
-        d: "d. ans32"
+        a: "a. 32",
+        b: "b. 30",
+        c: "c. 29",
+        d: "d. 34"
     },
     correctAnswer: "a",
 },{
-    question: "q9",
+    question: "What is 18 + 18?",
     answerChoices: {
-        a: "a. ans33",
-        b: "b. ans34",
-        c: "c. ans35",
-        d: "d. ans36"
+        a: "a. 32",
+        b: "b. 38",
+        c: "c. 34",
+        d: "d. 36"
     },
     correctAnswer: "d",
 },{
-    question: "q10",
+    question: "What is 20 + 20 * 0?",
     answerChoices: {
-        a: "a. ans37",
-        b: "b. ans38",
-        c: "c. ans39",
-        d: "d. ans40"
+        a: "a. 0",
+        b: "b. 20",
+        c: "c. 40",
+        d: "d. 21"
     },
     correctAnswer: "b",
 }];
@@ -216,6 +217,7 @@ function noCompound(){
     answer2.unbind();
     answer3.unbind();
     answer4.unbind();
+    isAnswered = false;
 };
 
 function clearInterval2(){
@@ -564,24 +566,36 @@ function right10(){
 function question1(){
     if (qNumber === 1){
         answer1.one("click", function(){
-            wrong1();
-            answer1.click = clearInterval1();
-            answer1.click = timer2interval();
+            if(isAnswered === false){
+                wrong1();
+                answer1.click = clearInterval1();
+                answer1.click = timer2interval();
+                isAnswered = true;
+            };
         });
         answer2.one("click", function(){
-            wrong1();
-            answer2.click = clearInterval1();
-            answer2.click = timer2interval();
+            if(isAnswered === false){
+                wrong1();
+                answer2.click = clearInterval1();
+                answer2.click = timer2interval();
+                isAnswered = true;
+            };
         });
         answer3.one("click", function(){
-            right1();
-            answer3.click = clearInterval1();
-            answer3.click = timer2interval();
+            if(isAnswered === false){
+                right1();
+                answer3.click = clearInterval1();
+                answer3.click = timer2interval();
+                isAnswered = true;
+            };
         });
         answer4.one("click", function(){
-            wrong1();
-            answer4.click = clearInterval1();
-            answer4.click = timer2interval();
+            if(isAnswered === false){
+                wrong1();
+                answer4.click = clearInterval1();
+                answer4.click = timer2interval();
+                isAnswered = true;
+            };
         });
     };
 };
